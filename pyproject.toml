@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "reddit_sentiment_tracker"
+version = "0.0.1"
+description = "Real-time stock sentiment analysis from Reddit"
+authors = [
+  { name = "Prasad Kurapati" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["reddit_sentiment_tracker"]
+include = ["pyproject.toml", "reddit_sentiment_tracker/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["reddit_sentiment_tracker"]
+force-sort-within-sections = true
+
