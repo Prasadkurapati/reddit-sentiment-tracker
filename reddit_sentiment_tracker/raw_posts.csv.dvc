@@ -1,0 +1,5 @@
+outs:
+- md5: 6d5ff78de63537405a6e2f42ba29d23c
+  size: 8852
+  hash: md5
+  path: raw_posts.csv
