@@ -17,5 +17,10 @@ COPY . .
 # Expose ports
 EXPOSE 8000 8501
 
-# Run both services (API + Dashboard)
-CMD uvicorn app.main:app --host 0.0.0.0 --port 8000 & streamlit run app/dashboard.py --server.port 8501 --server.address 0.0.0.0
+# Create startup script
+RUN echo '#!/bin/bash\n\
+uvicorn app.main:app --host 0.0.0.0 --port 8000 &\n\
+streamlit run app/dashboard.py --server.port 8501 --server.address 0.0.0.0\n\
+' > start.sh && chmod +x start.sh
+
+CMD ["./start.sh"]
