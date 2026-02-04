@@ -30,38 +30,28 @@ Output:
 - **Example Query**: https://reddit-sentiment-tracker-464p.onrender.com/analyze?limit=10 
 
 ## Project Structure
-
-├── LICENSE
-├── Makefile
-├── README.md
-├── data/
-│   ├── external/
-│   ├── interim/
-│   ├── processed/
-│   └── raw/
-├── docs/
-├── models/
-├── notebooks/
-├── pyproject.toml
-├── references/
-├── reports/
-│   └── figures/
+reddit-sentiment-tracker/
+├── app/
+│   ├── main.py              # FastAPI endpoints
+│   └── dashboard.py         # Streamlit UI
+├── reddit_sentiment_tracker/
+│   ├── data.py              # Reddit API scraper
+│   ├── features.py          # Ticker extraction
+│   ├── models.py            # VADER sentiment
+│   └── database.py          # SQLite storage
+├── data/                    # DVC-tracked datasets
+├── models/                  # Saved models
+├── notebooks/               # Jupyter notebooks
+├── Dockerfile               # Container config
 ├── requirements.txt
-├── setup.cfg
-└── reddit_sentiment_tracker/
-    ├── __init__.py
-    ├── config.py
-    ├── data.py          # Reddit API scraper
-    ├── features.py      # Ticker extraction
-    ├── models.py        # VADER sentiment
-    ├── database.py      # SQLite storage
-    └── modeling/
-        ├── __init__.py
-        ├── predict.py
-        └── train.py
+└── README.md
 
-app/
-├── main.py             # FastAPI endpoints
-└── dashboard.py        # Streamlit UI
 
-Dockerfile              # Container config
+## Key Files
+| File | Description |
+|------|-------------|
+| `app/main.py` | FastAPI routes (/fetch, /analyze) |
+| `reddit_sentiment_tracker/data.py` | Reddit JSON API client |
+| `reddit_sentiment_tracker/features.py` | Regex ticker extraction |
+| `reddit_sentiment_tracker/models.py` | VADER sentiment analysis |
+| `Dockerfile` | Multi-service container setup |
