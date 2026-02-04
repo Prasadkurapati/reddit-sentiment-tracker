@@ -1,66 +1,67 @@
 # Reddit Sentiment Tracker
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+Real-time stock sentiment analysis from Reddit discussions.
 
-Real-time stock sentiment analysis from Reddit
+## What It Does
+- **Scrapes** hot posts from r/wallstreetbets (stock trading community)
+- **Extracts** stock tickers ($AAPL, TSLA, NVDA, etc.) from post titles
+- **Analyzes sentiment** (Bullish/Bearish/Neutral) using VADER NLP
+- **Returns aggregated data** showing which stocks are trending and market mood
 
-## Project Organization
+## Example Use Case
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         reddit_sentiment_tracker and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── reddit_sentiment_tracker   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes reddit_sentiment_tracker a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
-```
+Input: "GME to the moon! 🚀 TSLA earnings beat expectations"
+Output:
+- GME: Bullish (confidence: 0.85), 15 mentions
+- TSLA: Bullish (confidence: 0.72), 8 mentions
 
---------
 
+## Tech Stack
+- **Data**: Reddit JSON API, PRAW
+- **NLP**: VADER Sentiment (lightweight, rule-based)
+- **API**: FastAPI (Python)
+- **Container**: Docker
+- **Cloud**: Render (free tier)
+- **Versioning**: DVC for datasets
 
 ## Live Demo
-- API: https://reddit-sentiment-tracker-464p.onrender.com
-- API Docs: https://reddit-sentiment-tracker-464p.onrender.com/docs
-- Example: https://reddit-sentiment-tracker-464p.onrender.com/analyze?limit=10
+- **API Root**: https://reddit-sentiment-tracker-464p.onrender.com 
+- **API Docs**: https://reddit-sentiment-tracker-464p.onrender.com/docs 
+- **Example Query**: https://reddit-sentiment-tracker-464p.onrender.com/analyze?limit=10 
+
+## Project Structure
+
+├── LICENSE
+├── Makefile
+├── README.md
+├── data/
+│   ├── external/
+│   ├── interim/
+│   ├── processed/
+│   └── raw/
+├── docs/
+├── models/
+├── notebooks/
+├── pyproject.toml
+├── references/
+├── reports/
+│   └── figures/
+├── requirements.txt
+├── setup.cfg
+└── reddit_sentiment_tracker/
+    ├── __init__.py
+    ├── config.py
+    ├── data.py          # Reddit API scraper
+    ├── features.py      # Ticker extraction
+    ├── models.py        # VADER sentiment
+    ├── database.py      # SQLite storage
+    └── modeling/
+        ├── __init__.py
+        ├── predict.py
+        └── train.py
+
+app/
+├── main.py             # FastAPI endpoints
+└── dashboard.py        # Streamlit UI
+
+Dockerfile              # Container config
