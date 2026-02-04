@@ -59,3 +59,8 @@ Real-time stock sentiment analysis from Reddit
 
 --------
 
+
+## Live Demo
+- API: https://reddit-sentiment-tracker-464p.onrender.com
+- API Docs: https://reddit-sentiment-tracker-464p.onrender.com/docs
+- Example: https://reddit-sentiment-tracker-464p.onrender.com/analyze?limit=10
