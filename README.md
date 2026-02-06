@@ -56,15 +56,11 @@ Real-time stock sentiment analysis from Reddit discussions using NLP. Deployed o
 
 ## API Endpoints
 
-| Endpoint | Method | Parameters | Description |
-
+| Endpoint   | Method | Parameters           | Description                      |
 | ---------- | ------ | -------------------- | -------------------------------- |
-
-| `/` | GET | - | Health check |
-
-| `/analyze` | GET | `subreddit`, `limit` | Fetch posts + sentiment analysis |
-
-| `/fetch` | GET | `subreddit`, `limit` | Fetch raw posts only |
+| `/`        | GET    | –                    | Health check                     |
+| `/analyze` | GET    | `subreddit`, `limit` | Fetch posts + sentiment analysis |
+| `/fetch`   | GET    | `subreddit`, `limit` | Fetch raw posts only             |
 
 ## Example Response
 
