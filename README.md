@@ -145,8 +145,8 @@ Run Streamlit dashboard locally (not deployed due to memory constraints):
 
 Access at: http://localhost:8501
 
-#### License
+## License
 
-MIT License - see LICENSE file
+MIT License - see [LICENSE](LICENSE) file
 
-Built by Prasad Kurapati | Live Demo
+Built by [Prasad Kurapati](https://github.com/Prasadkurapati) | [Live Demo](https://reddit-sentiment-tracker-464p.onrender.com)
