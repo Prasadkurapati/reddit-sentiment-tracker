@@ -1,12 +1,6 @@
 # Reddit Sentiment Tracker
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-green)](https://reddit-sentiment-tracker-464p.onrender.com)
-
-[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org)
-
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.128.0-teal)](https://fastapi.tiangolo.com)
-
-[![Docker](https://img.shields.io/badge/Docker-Enabled-blue)](https://docker.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-green)](https://reddit-sentiment-tracker-464p.onrender.com) [![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org) [![FastAPI](https://img.shields.io/badge/FastAPI-0.128.0-teal)](https://fastapi.tiangolo.com) [![Docker](https://img.shields.io/badge/Docker-Enabled-blue)](https://docker.com)
 
 Real-time stock sentiment analysis from Reddit discussions using NLP. Deployed on Render free tier.
 
